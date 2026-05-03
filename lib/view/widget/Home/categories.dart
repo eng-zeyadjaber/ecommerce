@@ -22,6 +22,7 @@ class CategoriesWidget extends StatelessWidget {
               print(imageName); // 👈 هنا بالضبط
 
               return Container(
+                //
                 margin: const EdgeInsets.symmetric(horizontal: 10),
                 width: 80,
                 child: Column(

@@ -58,14 +58,14 @@ class HomeHeader extends StatelessWidget {
                     : const SizedBox(),
               ),
 
-              Builder(
-                builder: (context) => InkWell(
-                  onTap: () {
-                    Scaffold.of(context).openEndDrawer(); // 🔥 يفتح من اليمين
-                  },
-                  child: const Icon(Icons.menu),
-                ),
-              ),
+              // Builder(
+              //   builder: (context) => InkWell(
+              //     onTap: () {
+              //       Scaffold.of(context).openEndDrawer(); // 🔥 يفتح من اليمين
+              //     },
+              //     child: const Icon(Icons.menu),
+              //   ),
+              // ),
             ],
           ),
         );

@@ -25,7 +25,7 @@ class _MyWidgetState extends State<Home> {
     return GetBuilder<HomeControllerImp>(
       builder: (controller) {
         return Scaffold(
-          endDrawer: SizedBox(width: 200, child: const CustomDrawer()),
+          drawer: SizedBox(width: 200, child: const CustomDrawer()),
           bottomNavigationBar: CustomBottomNavBar(
             currentIndex: controller.currentIndex, // 🔥 مهم
             onTap: controller.changePage, // 🔥 مهم
@@ -36,7 +36,7 @@ class _MyWidgetState extends State<Home> {
               slivers: [
                 /// 🔥 الهيدر الثابت
                 SliverAppBar(
-                  pinned: true, // ✅ يخليه ثابت
+                  pinned: false, // ✅ يخليه ثابت
                   automaticallyImplyLeading: false,
                   floating: false,
                   snap: false,
