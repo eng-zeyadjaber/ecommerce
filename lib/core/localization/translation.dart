@@ -76,6 +76,7 @@ class MyTranslation extends Translations {
 
       "go_login": "Go to Login",
       "email_exist": "Email incorrect",
+      "product_for_you": "Product for you",
 
       "Try_again": "Try_again",
       /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -174,6 +175,7 @@ class MyTranslation extends Translations {
 
       "go_login": "الذهاب إلى تسجيل الدخول",
       "email_exist": "الإيميل غير صحيح",
+      "product_for_you": "منتجات لك",
 
       "Try_again": "حاول مرة اخرى",
       /////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -61,7 +61,7 @@ class HomeHeader extends StatelessWidget {
               // Builder(
               //   builder: (context) => InkWell(
               //     onTap: () {
-              //       Scaffold.of(context).openEndDrawer(); // 🔥 يفتح من اليمين
+              //       Scaffold.of(context).openDrawer(); // 🔥 يفتح الـ drawer
               //     },
               //     child: const Icon(Icons.menu),
               //   ),

@@ -9,7 +9,7 @@ class HomeControllerImp extends GetxController {
   MyServices myServices = Get.find();
 
   bool isSearchOpen = false;
-  int currentIndex = 0;
+  int currentIndex = 2;
   String? username;
   String? email;
   String? phone;
@@ -17,6 +17,7 @@ class HomeControllerImp extends GetxController {
   HomeData homeData = HomeData(Get.find());
   // List data = [];
   List categories = [];
+  List items = [];
   StatusRequest statusRequest = StatusRequest.none;
 
   /// حالة المستخدم
@@ -65,10 +66,28 @@ class HomeControllerImp extends GetxController {
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
         categories.addAll(response['categories']);
+        items.addAll(response['items']);
       } else {
         statusRequest = StatusRequest.failure;
       }
     }
     update();
   }
+
+  // // 🔥 دالة لجلب الكاتيجوري فقط
+  // getCategoriesOnly() async {
+  //   statusRequest = StatusRequest.loading;
+  //   update();
+  //   var response = await homeData.getCategoriesData();
+  //   statusRequest = handlingData(response);
+  //   if (StatusRequest.success == statusRequest) {
+  //     if (response['status'] == "success") {
+  //       categories.clear(); // مسح البيانات القديمة
+  //       categories.addAll(response['categories']);
+  //     } else {
+  //       statusRequest = StatusRequest.failure;
+  //     }
+  //   }
+  //   update();
+  // }
 }

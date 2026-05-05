@@ -25,7 +25,7 @@ class _MyWidgetState extends State<Home> {
     return GetBuilder<HomeControllerImp>(
       builder: (controller) {
         return Scaffold(
-          drawer: SizedBox(width: 200, child: const CustomDrawer()),
+          endDrawer: SizedBox(width: 200, child: const CustomDrawer()),
           bottomNavigationBar: CustomBottomNavBar(
             currentIndex: controller.currentIndex, // 🔥 مهم
             onTap: controller.changePage, // 🔥 مهم
@@ -51,13 +51,30 @@ class _MyWidgetState extends State<Home> {
                   child: HandlingDataRequest(
                     statusRequest: controller.statusRequest,
                     widget: Column(
-                      children: const [
-                        SizedBox(height: 20),
-                        BannerWidget(),
-                        SizedBox(height: 20),
-                        CategoriesWidget(),
-                        SizedBox(height: 20),
-                        ProductsWidget(),
+                      children: [
+                        const SizedBox(height: 20),
+                        const BannerWidget(),
+                        const SizedBox(height: 20),
+                        const CategoriesWidget(),
+                        const SizedBox(height: 20),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.symmetric(
+                            horizontal: 16,
+                          ),
+                          child: Align(
+                            alignment: AlignmentDirectional.centerStart,
+                            child: Text(
+                              'product_for_you'.tr,
+                              style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        const ProductsWidget(),
                       ],
                     ),
                   ),

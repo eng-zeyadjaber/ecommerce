@@ -8,6 +8,9 @@ class CategoriesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // // 🔥 استدعاء دالة جلب الكاتيجوري من قاعدة البيانات
+    // Get.find<HomeControllerImp>().getCategoriesOnly();
+
     return GetBuilder<HomeControllerImp>(
       builder: (controller) {
         return SizedBox(
@@ -22,7 +25,6 @@ class CategoriesWidget extends StatelessWidget {
               print(imageName); // 👈 هنا بالضبط
 
               return Container(
-                //
                 margin: const EdgeInsets.symmetric(horizontal: 10),
                 width: 80,
                 child: Column(
@@ -35,6 +37,8 @@ class CategoriesWidget extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
                       ),
+                      //في حالتك، إذا كانت الصور موجودة في مجلد الأصول (assets) داخل مشروعك، يمكنك استخدام Image.asset لعرضها. تأكد من أن مسار الصورة صحيح وأن الصورة موجودة في المكان المحدد.
+                      // child: SvgPicture.network("${AppImageAsset.categories}/${controller.categories[index]['categories_image']}"),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Image.asset(

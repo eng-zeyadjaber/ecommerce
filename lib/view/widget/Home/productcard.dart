@@ -1,8 +1,16 @@
-import 'package:ecommercecourse/core/constant/imageasset.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  final String image;
+  final String title;
+  final String price;
+
+  const ProductCard({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.price,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +24,7 @@ class ProductCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                    image: AssetImage(AppImageAsset.productTest),
+                    image: AssetImage(image),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -47,9 +55,9 @@ class ProductCard extends StatelessWidget {
 
         const SizedBox(height: 25),
 
-        const Text("Bomber Jackets"),
+        Text(title),
         const SizedBox(height: 5),
-        const Text("\$49.99", style: TextStyle(fontWeight: FontWeight.bold)),
+        Text(price, style: const TextStyle(fontWeight: FontWeight.bold)),
       ],
     );
   }
