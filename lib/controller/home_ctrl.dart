@@ -18,6 +18,23 @@ class HomeControllerImp extends GetxController {
   // List data = [];
   List categories = [];
   List items = [];
+
+  Map<String, dynamic>? get bestDiscountItem {
+    if (items.isEmpty) return null;
+
+    int parseDiscount(dynamic value) {
+      if (value == null) return 0;
+      if (value is int) return value;
+      return int.tryParse(value.toString()) ?? 0;
+    }
+
+    return items.reduce((current, next) {
+      final currentDiscount = parseDiscount(current['items_discount']);
+      final nextDiscount = parseDiscount(next['items_discount']);
+      return nextDiscount > currentDiscount ? next : current;
+    });
+  }
+
   StatusRequest statusRequest = StatusRequest.none;
 
   /// حالة المستخدم

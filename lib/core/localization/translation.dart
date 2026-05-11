@@ -81,6 +81,11 @@ class MyTranslation extends Translations {
       "Try_again": "Try_again",
       /////////////////////////////////////////////////////////////////////////////////////////////////
 
+      // Banner
+      "shop_with_us": "Shop with us!",
+      "get_discount_off": "Get @discount% Off for\nall items",
+      "shop_now": "Shop Now →",
+
       //validinput
       "field_required": "This field is required",
       "min_length": "Must be at least @min characters",
@@ -179,6 +184,11 @@ class MyTranslation extends Translations {
 
       "Try_again": "حاول مرة اخرى",
       /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+      // Banner
+      "shop_with_us": "تسوق معنا!",
+      "get_discount_off": "احصل على @discount% خصم\nعلى جميع المنتجات",
+      "shop_now": "تسوق الآن →",
 
       //validinput
       "field_required": "هذا الحقل مطلوب",
