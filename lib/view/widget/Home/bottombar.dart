@@ -13,40 +13,32 @@ class CustomBottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      currentIndex: currentIndex,
-      onTap: onTap,
-      backgroundColor: AppTextColor.primary,
-      selectedItemColor: Colors.white,
-      unselectedItemColor: Colors.white54,
-      showSelectedLabels: false,
-      showUnselectedLabels: false,
-      type: BottomNavigationBarType.fixed,
-      items: [
-        _item(Icons.shopping_bag, 0),
-        _item(Icons.favorite, 1),
-        _item(Icons.home, 2),
-        _item(Icons.notifications, 3),
-        _item(Icons.person, 4),
-      ],
+    return BottomAppBar(
+      color: AppTextColor.primary,
+      shape: const CircularNotchedRectangle(),
+      notchMargin: 10,
+      child: SizedBox(
+        height: 60,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            _buildItem(Icons.favorite, 0),
+            _buildItem(Icons.home, 1),
+            const SizedBox(width: 48),
+            _buildItem(Icons.notifications, 3),
+            _buildItem(Icons.person, 4),
+          ],
+        ),
+      ),
     );
   }
 
-  BottomNavigationBarItem _item(IconData icon, int index) {
-    bool isSelected = currentIndex == index;
+  Widget _buildItem(IconData icon, int index) {
+    final isSelected = currentIndex == index;
 
-    return BottomNavigationBarItem(
-      label: "",
-      icon: Transform.translate(
-        offset: Offset(0, isSelected ? -10 : 0), // 🔥 الرفع
-        child: Container(
-          padding: const EdgeInsets.all(10),
-          decoration: isSelected
-              ? const BoxDecoration(color: Colors.blue, shape: BoxShape.circle)
-              : null,
-          child: Icon(icon),
-        ),
-      ),
+    return IconButton(
+      onPressed: () => onTap(index),
+      icon: Icon(icon, color: isSelected ? Colors.white : Colors.white54),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:ecommercecourse/controller/home_ctrl.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
+import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/view/widget/Home/banner.dart';
 import 'package:ecommercecourse/view/widget/Home/bottombar.dart';
 import 'package:ecommercecourse/view/widget/Home/categories.dart';
@@ -27,6 +28,13 @@ class _MyWidgetState extends State<Home> {
       builder: (controller) {
         return Scaffold(
           endDrawer: SizedBox(width: 200, child: const CustomDrawer()),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () => controller.changePage(2),
+            backgroundColor: AppTextColor.primary,
+            child: const Icon(Icons.shopping_bag, color: AppTextColor.white),
+          ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
           bottomNavigationBar: CustomBottomNavBar(
             currentIndex: controller.currentIndex, // 🔥 مهم
             onTap: controller.changePage, // 🔥 مهم
