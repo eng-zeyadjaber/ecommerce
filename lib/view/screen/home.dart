@@ -6,6 +6,7 @@ import 'package:ecommercecourse/view/widget/Home/categories.dart';
 import 'package:ecommercecourse/view/widget/Home/drawer.dart';
 import 'package:ecommercecourse/view/widget/Home/header.dart';
 import 'package:ecommercecourse/view/widget/Home/products.dart';
+import 'package:ecommercecourse/view/widget/Home/titlehome.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -52,28 +53,10 @@ class _MyWidgetState extends State<Home> {
                     statusRequest: controller.statusRequest,
                     widget: Column(
                       children: [
-                        const SizedBox(height: 20),
                         const BannerWidget(),
-                        const SizedBox(height: 20),
+                        const Titlehome(title: 'categories'),
                         const CategoriesWidget(),
-                        const SizedBox(height: 20),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.symmetric(
-                            horizontal: 16,
-                          ),
-                          child: Align(
-                            alignment: AlignmentDirectional.centerStart,
-                            child: Text(
-                              'product_for_you'.tr,
-                              style: const TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 10),
+                        const Titlehome(title: 'product_for_you'),
                         const ProductsWidget(),
                       ],
                     ),
